@@ -1,16 +1,12 @@
 {% extends "base.html" %}
-{% load static %}
+{% block title %}Добавить новый пост{% endblock %}
+{% block content %}
+    
+    <h1>Добавить пост</h1>
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Отправить">
 
+{% endblock %}
 
-<main>
-    <div class="container">
-        {% block content %}
-        <h1>Создание нового поста</h1>
-        <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Отправить">
-        </form>
-        {% endblock content %}
-    </div>
-</main>

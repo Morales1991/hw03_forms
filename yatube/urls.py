@@ -18,8 +18,9 @@ from django.urls import include, path
 
 
 urlpatterns = [
-    path('', include("posts.urls")),
-    path('auth/', include("users.urls")),
+    path("", include("posts.urls")),
+    path("auth/", include("users.urls")),# ковычки лучше одинарные использовать? если по умолчанию Django делает одинарные?
     path("auth/", include("django.contrib.auth.urls")),
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
 ]
+
