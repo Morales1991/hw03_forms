@@ -25,7 +25,12 @@ SECRET_KEY = '53=q)09(+v+miz(4#u%%6zc$g!ujql@=3f4rskyp2kqp(j%l92'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+        "localhost",
+        "127.0.0.1",
+        "[::1]",
+        "testserver",
+]
 
 
 # Application definition
@@ -33,6 +38,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'users',
     'posts',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -128,4 +135,4 @@ LOGIN_REDIRECT_URL = "index"
 
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
-
+SITE_ID = 1
